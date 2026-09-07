@@ -1,0 +1,40 @@
+{
+  "index": {
+    "name": "Flock DeFi Index",
+    "symbol": "FDI",
+    "navPerTokenUsd": 100
+  },
+  "methodologyVersion": "1.0.0",
+  "preparedAt": "2026-09-07T21:08:29.576Z",
+  "screenGeneratedAt": "2026-09-07T21:08:02.885Z",
+  "indexMint": null,
+  "auction": {
+    "duration": 7200,
+    "startPremiumBps": -50,
+    "endPremiumBps": 150,
+    "maxNavLossBps": 100
+  },
+  "weights": [
+    {
+      "mint": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "symbol": "RAY",
+      "weightBps": 3500
+    },
+    {
+      "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "symbol": "JUP",
+      "weightBps": 3465
+    },
+    {
+      "mint": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS",
+      "symbol": "KMNO",
+      "weightBps": 1579
+    },
+    {
+      "mint": "METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL",
+      "symbol": "MET",
+      "weightBps": 1456
+    }
+  ],
+  "weightsArgument": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R=3500,JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN=3465,KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS=1579,METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL=1456"
+}

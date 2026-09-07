@@ -1,0 +1,677 @@
+{
+  "index": {
+    "name": "Flock DeFi Index",
+    "symbol": "FDI",
+    "navPerTokenUsd": 100
+  },
+  "methodologyVersion": "1.0.0",
+  "generatedAt": "2026-09-07T21:10:12.624Z",
+  "source": "Jupiter tokens/v2 verified set",
+  "universeSize": 3203,
+  "candidateSize": 126,
+  "rules": {
+    "categoryTag": "defi",
+    "excludedTags": [
+      "lst",
+      "original-lst",
+      "stable",
+      "rwa",
+      "stocks",
+      "xstocks",
+      "prestocks",
+      "equities",
+      "token-2022"
+    ],
+    "minMarketCapUsd": 50000000,
+    "minLiquidityUsd": 1000000,
+    "minHolders": 20000,
+    "minAgeDays": 180,
+    "minOrganicScore": 50,
+    "minOrganicVolume24hUsd": 50000,
+    "minOrganicTurnoverBps": 3,
+    "maxFdvToMarketCap": 4,
+    "liquidityCapMultiple": 25,
+    "maxConstituents": 10,
+    "maxWeightBps": 3500,
+    "minWeightBps": 300,
+    "retentionSlack": 0.8
+  },
+  "constituents": [
+    {
+      "mint": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "symbol": "RAY",
+      "decimals": 6,
+      "score": 312719857.30641466,
+      "weightBps": 3500,
+      "marketCapUsd": 312719857.30641466,
+      "liquidityUsd": 12634245.836149508,
+      "usdPrice": 1.160203580997848
+    },
+    {
+      "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "symbol": "JUP",
+      "decimals": 6,
+      "score": 106611410.8007982,
+      "weightBps": 3463,
+      "marketCapUsd": 835129336.1839919,
+      "liquidityUsd": 4264456.432031928,
+      "usdPrice": 0.2515212704984593
+    },
+    {
+      "mint": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS",
+      "symbol": "KMNO",
+      "decimals": 6,
+      "score": 48565274.86330195,
+      "weightBps": 1577,
+      "marketCapUsd": 136360846.08466524,
+      "liquidityUsd": 1942610.9945320778,
+      "usdPrice": 0.02488585289373644
+    },
+    {
+      "mint": "METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL",
+      "symbol": "MET",
+      "decimals": 6,
+      "score": 44949765.91568528,
+      "weightBps": 1460,
+      "marketCapUsd": 109572165.41521163,
+      "liquidityUsd": 1797990.6366274112,
+      "usdPrice": 0.19901498084909358
+    }
+  ],
+  "totalWeightBps": 10000,
+  "indexMarketCapUsd": 1393782204.9902835,
+  "indexLiquidityUsd": 20639303.899340924,
+  "nearMisses": [
+    {
+      "mint": "pumpCmXqMfrsAkQ5r49WcJnRayYRqmXz6ae8H7H9Dfn",
+      "symbol": "PUMP",
+      "marketCapUsd": 1730234923.7569325,
+      "liquidityUsd": 35658482.90437019,
+      "holders": 150641,
+      "organicScore": 97.92213426473552,
+      "ageDays": 422,
+      "failures": [
+        "excluded tag token-2022",
+        "not the SPL Token program"
+      ]
+    },
+    {
+      "mint": "27G8MtK7VtTcCHkpASjSDdkWWYfoqT6ggEuKidVJidD4",
+      "symbol": "JLP",
+      "marketCapUsd": 864140397.53784,
+      "liquidityUsd": 5806094.07351115,
+      "holders": 89850,
+      "organicScore": 85.90800396326138,
+      "ageDays": 930,
+      "failures": [
+        "mint authority not provably disabled",
+        "freeze authority not provably disabled"
+      ]
+    },
+    {
+      "mint": "DBRiDgJAMsM95moTzJs7M9LnkGErpbv9v6CUR1DXnUu5",
+      "symbol": "DBR",
+      "marketCapUsd": 88830874.2550713,
+      "liquidityUsd": 2707177.6920818323,
+      "holders": 83454,
+      "organicScore": 60.019495419568045,
+      "ageDays": 693,
+      "failures": [
+        "organic volume $9,796 below $50,000"
+      ]
+    },
+    {
+      "mint": "98sMhvDwXj1RQi5c5Mndm3vPe9cBqPrbLaufMXFNMh5g",
+      "symbol": "HYPE",
+      "marketCapUsd": 60351776.73413055,
+      "liquidityUsd": 5578287.988867306,
+      "holders": 37084,
+      "organicScore": 90.61788366601894,
+      "ageDays": 332,
+      "failures": [
+        "mint authority not provably disabled"
+      ]
+    },
+    {
+      "mint": "METAwkXcqyXKy1AtsSgJ8JiUHwGCafnZL38n3vYmeta",
+      "symbol": "META",
+      "marketCapUsd": 120550430.27982211,
+      "liquidityUsd": 1529420.1472545255,
+      "holders": 6557,
+      "organicScore": 69.41212276309531,
+      "ageDays": 393,
+      "failures": [
+        "mint authority not provably disabled",
+        "6557 holders below 20000"
+      ]
+    },
+    {
+      "mint": "SKRbvo6Gf7GondiT3BbTfuRDPqLWei4j2Qy2NPGZhW3",
+      "symbol": "SKR",
+      "marketCapUsd": 147328542.7114825,
+      "liquidityUsd": 1071307.8540398213,
+      "holders": 45291,
+      "organicScore": 81.82891646834699,
+      "ageDays": 231,
+      "failures": [
+        "mint authority not provably disabled"
+      ]
+    },
+    {
+      "mint": "CARDSccUMFKoPRZxt5vt3ksUbxEFEcnZ3H2pd3dKxYjp",
+      "symbol": "CARDS",
+      "marketCapUsd": 134577617.82945964,
+      "liquidityUsd": 976632.0623551288,
+      "holders": 20616,
+      "organicScore": 89.66720252381683,
+      "ageDays": 374,
+      "failures": [
+        "liquidity $976,632 below $1,000,000"
+      ]
+    },
+    {
+      "mint": "3iQL8BFS2vE7mww4ehAqQHAsbmRNCrPxizWAT2Zfyr9y",
+      "symbol": "VIRTUAL",
+      "marketCapUsd": 20329274.78452056,
+      "liquidityUsd": 2029191.8474723944,
+      "holders": 28199,
+      "organicScore": 60.407698707834754,
+      "ageDays": 581,
+      "failures": [
+        "mint authority not provably disabled",
+        "freeze authority not provably disabled",
+        "market cap $20,329,275 below $50,000,000",
+        "organic volume $29,049 below $50,000"
+      ]
+    },
+    {
+      "mint": "BPxxfRCXkUVhig4HS1Lh7kZqV6SPJhzfEk4x6fVBjPCy",
+      "symbol": "BP",
+      "marketCapUsd": 503665239.01608074,
+      "liquidityUsd": 674086.4449011543,
+      "holders": 8615,
+      "organicScore": 88.85356653571523,
+      "ageDays": 173,
+      "failures": [
+        "mint authority not provably disabled",
+        "freeze authority not provably disabled",
+        "liquidity $674,086 below $1,000,000",
+        "8615 holders below 20000",
+        "173 days old"
+      ]
+    },
+    {
+      "mint": "METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m",
+      "symbol": "MPLX",
+      "marketCapUsd": 15216493.644818388,
+      "liquidityUsd": 1079966.126605838,
+      "holders": 24494,
+      "organicScore": 55.4054862496625,
+      "ageDays": 820,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $15,216,494 below $50,000,000",
+        "organic volume $5,065 below $50,000"
+      ]
+    },
+    {
+      "mint": "WETZjtprkDMCcUxPi9PfWnowMRZkiGGHDb9rABuRZ2U",
+      "symbol": "WET",
+      "marketCapUsd": 14489105.36554356,
+      "liquidityUsd": 500797.85126709874,
+      "holders": 5365,
+      "organicScore": 0,
+      "ageDays": 274,
+      "failures": [
+        "market cap $14,489,105 below $50,000,000",
+        "liquidity $500,798 below $1,000,000",
+        "5365 holders below 20000",
+        "organic score 0",
+        "organic volume $1,380 below $50,000",
+        "FDV is 4.3x market cap"
+      ]
+    },
+    {
+      "mint": "HUMA1821qVDKta3u2ovmfDQeW2fSQouSKE8fkF44wvGw",
+      "symbol": "HUMA",
+      "marketCapUsd": 38799636.69823718,
+      "liquidityUsd": 410822.5712004955,
+      "holders": 22022,
+      "organicScore": 47.3776909839726,
+      "ageDays": 472,
+      "failures": [
+        "market cap $38,799,637 below $50,000,000",
+        "liquidity $410,823 below $1,000,000",
+        "organic score 47",
+        "organic volume $427 below $50,000",
+        "FDV is 5.8x market cap"
+      ]
+    },
+    {
+      "mint": "CLoUDKc4Ane7HeQcPpE3YHnznRxhMimJ4MyaUqyHFzAu",
+      "symbol": "CLOUD",
+      "marketCapUsd": 36076573.76335933,
+      "liquidityUsd": 404763.2671882103,
+      "holders": 78941,
+      "organicScore": 67.55122200104066,
+      "ageDays": 785,
+      "failures": [
+        "market cap $36,076,574 below $50,000,000",
+        "liquidity $404,763 below $1,000,000",
+        "organic volume $12,800 below $50,000"
+      ]
+    },
+    {
+      "mint": "orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE",
+      "symbol": "ORCA",
+      "marketCapUsd": 94655201.74276736,
+      "liquidityUsd": 401048.05040921096,
+      "holders": 90168,
+      "organicScore": 80.47228239565217,
+      "ageDays": 820,
+      "failures": [
+        "mint authority not provably disabled",
+        "liquidity $401,048 below $1,000,000"
+      ]
+    },
+    {
+      "mint": "HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3",
+      "symbol": "PYTH",
+      "marketCapUsd": 431814979.7366518,
+      "liquidityUsd": 334389.4193333322,
+      "holders": 306463,
+      "organicScore": 77.39372682274941,
+      "ageDays": 1022,
+      "failures": [
+        "liquidity $334,389 below $1,000,000",
+        "organic volume $43,494 below $129,544"
+      ]
+    },
+    {
+      "mint": "31k88G5Mq7ptbRDf3AM13HAq6wRQHXHikR8hik7wPygk",
+      "symbol": "GP",
+      "marketCapUsd": 15503618.364559267,
+      "liquidityUsd": 333072.30262452085,
+      "holders": 10727,
+      "organicScore": 66.37287641098646,
+      "ageDays": 820,
+      "failures": [
+        "market cap $15,503,618 below $50,000,000",
+        "liquidity $333,072 below $1,000,000",
+        "10727 holders below 20000",
+        "organic volume $45,897 below $50,000"
+      ]
+    },
+    {
+      "mint": "74SBV4zDXxTRgv1pEMoECskKBkZHc2yGPnc7GYVepump",
+      "symbol": "swarms",
+      "marketCapUsd": 7427542.735133114,
+      "liquidityUsd": 722497.9723773879,
+      "holders": 28991,
+      "organicScore": 50.40861533430204,
+      "ageDays": 629,
+      "failures": [
+        "market cap $7,427,543 below $50,000,000",
+        "liquidity $722,498 below $1,000,000",
+        "organic volume $5,625 below $50,000"
+      ]
+    },
+    {
+      "mint": "Eg2ymQ2aQqjMcibnmTt8erC6Tvk9PVpJZCxvVPJz2agu",
+      "symbol": "PUMPCADE",
+      "marketCapUsd": 9786448.06033457,
+      "liquidityUsd": 239397.51447678712,
+      "holders": 4689,
+      "organicScore": 64.71124520678889,
+      "ageDays": 352,
+      "failures": [
+        "market cap $9,786,448 below $50,000,000",
+        "liquidity $239,398 below $1,000,000",
+        "4689 holders below 20000"
+      ]
+    },
+    {
+      "mint": "3dQTr7ror2QPKQ3GbBCokJUmjErGg8kTJzdnYjNfvi3Z",
+      "symbol": "BORG",
+      "marketCapUsd": 5909619.2709164815,
+      "liquidityUsd": 663347.7685524562,
+      "holders": 3492,
+      "organicScore": 46.522530010559244,
+      "ageDays": 820,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $5,909,619 below $50,000,000",
+        "liquidity $663,348 below $1,000,000",
+        "3492 holders below 20000",
+        "organic score 47",
+        "organic volume $6,679 below $50,000"
+      ]
+    },
+    {
+      "mint": "PAYmo6moDF3Ro3X6bU2jwe2UdBnBhv8YjLgL1j4DxGu",
+      "symbol": "PAYAI",
+      "marketCapUsd": 5703288.920974886,
+      "liquidityUsd": 284196.49513722153,
+      "holders": 5823,
+      "organicScore": 55.39981146884871,
+      "ageDays": 293,
+      "failures": [
+        "market cap $5,703,289 below $50,000,000",
+        "liquidity $284,196 below $1,000,000",
+        "5823 holders below 20000",
+        "organic volume $11,836 below $50,000"
+      ]
+    },
+    {
+      "mint": "2bpT3ksMdwdZ6DuHyq3FDUr7HDwvZ5DRZoT1fUPALJaH",
+      "symbol": "RIV",
+      "marketCapUsd": 41488978.938613705,
+      "liquidityUsd": 219993.83182551817,
+      "holders": 5057,
+      "organicScore": 0,
+      "ageDays": 168,
+      "failures": [
+        "market cap $41,488,979 below $50,000,000",
+        "liquidity $219,994 below $1,000,000",
+        "5057 holders below 20000",
+        "168 days old",
+        "organic score 0",
+        "organic volume $750 below $50,000"
+      ]
+    },
+    {
+      "mint": "jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL",
+      "symbol": "JTO",
+      "marketCapUsd": 230803227.9118802,
+      "liquidityUsd": 211896.98639530386,
+      "holders": 85302,
+      "organicScore": 76.62412609044219,
+      "ageDays": 1006,
+      "failures": [
+        "liquidity $211,897 below $1,000,000",
+        "organic volume $48,994 below $69,241"
+      ]
+    },
+    {
+      "mint": "MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u",
+      "symbol": "ME",
+      "marketCapUsd": 40416047.798916,
+      "liquidityUsd": 169922.60604504702,
+      "holders": 152771,
+      "organicScore": 58.407054794552344,
+      "ageDays": 642,
+      "failures": [
+        "market cap $40,416,048 below $50,000,000",
+        "liquidity $169,923 below $1,000,000",
+        "organic volume $7,259 below $50,000"
+      ]
+    },
+    {
+      "mint": "BANKJmvhT8tiJRsBSS1n2HryMBPvT5Ze4HU95DUAmeta",
+      "symbol": "AVICI",
+      "marketCapUsd": 3560620.642428194,
+      "liquidityUsd": 628315.6446016375,
+      "holders": 12340,
+      "organicScore": 57.35771370639429,
+      "ageDays": 328,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $3,560,621 below $50,000,000",
+        "liquidity $628,316 below $1,000,000",
+        "12340 holders below 20000",
+        "organic volume $17,938 below $50,000"
+      ]
+    },
+    {
+      "mint": "TUNAfXDZEdQizTMTh3uEvNvYqJmqFHZbEJt8joP4cyx",
+      "symbol": "TUNA",
+      "marketCapUsd": 3478899.6418224387,
+      "liquidityUsd": 582123.7297582504,
+      "holders": 1863,
+      "organicScore": 0,
+      "ageDays": 408,
+      "failures": [
+        "market cap $3,478,900 below $50,000,000",
+        "liquidity $582,124 below $1,000,000",
+        "1863 holders below 20000",
+        "organic score 0",
+        "organic volume $1,169 below $50,000"
+      ]
+    },
+    {
+      "mint": "FQgtfugBdpFN7PZ6NdPrZpVLDBrPGxXesi4gVu3vErhY",
+      "symbol": "BMT",
+      "marketCapUsd": 8877399.785035582,
+      "liquidityUsd": 128409.07741001844,
+      "holders": 5904,
+      "organicScore": 0,
+      "ageDays": 548,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $8,877,400 below $50,000,000",
+        "liquidity $128,409 below $1,000,000",
+        "5904 holders below 20000",
+        "organic score 0",
+        "organic volume $0 below $50,000"
+      ]
+    },
+    {
+      "mint": "85VBFQZC9TZkfaptBWjvUw7YbZjy52A6mjtPGjstQAmQ",
+      "symbol": "W",
+      "marketCapUsd": 66182623.00727845,
+      "liquidityUsd": 122082.54264446757,
+      "holders": 97478,
+      "organicScore": 62.29497485465991,
+      "ageDays": 888,
+      "failures": [
+        "liquidity $122,083 below $1,000,000",
+        "organic volume $7,483 below $50,000"
+      ]
+    },
+    {
+      "mint": "HKJHsYJHMVK5VRyHHk5GhvzY9tBAAtPvDkZfDH6RLDTd",
+      "symbol": "READY",
+      "marketCapUsd": 3917741.812979033,
+      "liquidityUsd": 95748.37561471225,
+      "holders": 3932,
+      "organicScore": 50.062203346730605,
+      "ageDays": 650,
+      "failures": [
+        "market cap $3,917,742 below $50,000,000",
+        "liquidity $95,748 below $1,000,000",
+        "3932 holders below 20000",
+        "organic volume $1,889 below $50,000"
+      ]
+    },
+    {
+      "mint": "EicWvteVi2fWepEzS3FYWsnuPoP6caZfjnKqNvydLjCH",
+      "symbol": "LIT",
+      "marketCapUsd": 2377405.8000963395,
+      "liquidityUsd": 265313.5277981472,
+      "holders": 1467,
+      "organicScore": 54.94912244890053,
+      "ageDays": 235,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $2,377,406 below $50,000,000",
+        "liquidity $265,314 below $1,000,000",
+        "1467 holders below 20000"
+      ]
+    },
+    {
+      "mint": "PRVT6TB7uss3FrUd2D9xs2zqDBsa3GbMJMwCQsgmeta",
+      "symbol": "UMBRA",
+      "marketCapUsd": 2360459.545995512,
+      "liquidityUsd": 636172.235559996,
+      "holders": 6210,
+      "organicScore": 50.42695185968572,
+      "ageDays": 333,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $2,360,460 below $50,000,000",
+        "liquidity $636,172 below $1,000,000",
+        "6210 holders below 20000",
+        "organic volume $10,556 below $50,000"
+      ]
+    },
+    {
+      "mint": "omfgRBnxHsNJh6YeGbGAmWenNkenzsXyBXm3WDhmeta",
+      "symbol": "OMFG",
+      "marketCapUsd": 2176115.860474003,
+      "liquidityUsd": 302453.52342849376,
+      "holders": 1717,
+      "organicScore": 0,
+      "ageDays": 406,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $2,176,116 below $50,000,000",
+        "liquidity $302,454 below $1,000,000",
+        "1717 holders below 20000",
+        "organic score 0",
+        "organic volume $11,300 below $50,000"
+      ]
+    },
+    {
+      "mint": "3ZLekZYq2qkZiSpnSvabjit34tUkjSwD1JFuW9as9wBG",
+      "symbol": "wNEAR",
+      "marketCapUsd": 2091241.5013418982,
+      "liquidityUsd": 442909.9940440636,
+      "holders": 4243,
+      "organicScore": 78.40193807030674,
+      "ageDays": 559,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $2,091,242 below $50,000,000",
+        "liquidity $442,910 below $1,000,000",
+        "4243 holders below 20000"
+      ]
+    },
+    {
+      "mint": "8Aq4fWMgPqJbF3w8w8PnLDRVUAFe4mzsCvPKxAArbonk",
+      "symbol": "Real",
+      "marketCapUsd": 2068516.1961701803,
+      "liquidityUsd": 90125.47035480572,
+      "holders": 4368,
+      "organicScore": 0,
+      "ageDays": 350,
+      "failures": [
+        "market cap $2,068,516 below $50,000,000",
+        "liquidity $90,125 below $1,000,000",
+        "4368 holders below 20000",
+        "organic score 0",
+        "organic volume $16 below $50,000"
+      ]
+    },
+    {
+      "mint": "boopkpWqe68MSxLqBGogs8ZbUDN4GXaLhFwNP7mpP1i",
+      "symbol": "BOOP",
+      "marketCapUsd": 4823531.402204045,
+      "liquidityUsd": 79709.45104188187,
+      "holders": 5632,
+      "organicScore": 0,
+      "ageDays": 494,
+      "failures": [
+        "market cap $4,823,531 below $50,000,000",
+        "liquidity $79,709 below $1,000,000",
+        "5632 holders below 20000",
+        "organic score 0",
+        "organic volume $0 below $50,000"
+      ]
+    },
+    {
+      "mint": "STREAMribRwybYpMmSYoCsQUdr6MZNXEqHgm7p1gu9M",
+      "symbol": "STREAM",
+      "marketCapUsd": 8996862.467531117,
+      "liquidityUsd": 79035.80781328841,
+      "holders": 22952,
+      "organicScore": 45.586201712436974,
+      "ageDays": 631,
+      "failures": [
+        "market cap $8,996,862 below $50,000,000",
+        "liquidity $79,036 below $1,000,000",
+        "organic score 46",
+        "organic volume $446 below $50,000"
+      ]
+    },
+    {
+      "mint": "DriFtupJYLTosbwoN8koMbEYSx54aFAVLddWsbksjwg7",
+      "symbol": "DRIFT",
+      "marketCapUsd": 8766140.588427909,
+      "liquidityUsd": 67266.96624015374,
+      "holders": 27903,
+      "organicScore": 49.84071332680198,
+      "ageDays": 846,
+      "failures": [
+        "market cap $8,766,141 below $50,000,000",
+        "liquidity $67,267 below $1,000,000",
+        "organic score 50",
+        "organic volume $1,136 below $50,000"
+      ]
+    },
+    {
+      "mint": "AT79ReYU9XtHUTF5vM6Q4oa9K8w7918Fp5SU7G1MDMQY",
+      "symbol": "SPDR",
+      "marketCapUsd": 2276459.2058810373,
+      "liquidityUsd": 62801.44020701759,
+      "holders": 11810,
+      "organicScore": 0,
+      "ageDays": 820,
+      "failures": [
+        "market cap $2,276,459 below $50,000,000",
+        "liquidity $62,801 below $1,000,000",
+        "11810 holders below 20000",
+        "organic score 0",
+        "organic volume $12 below $50,000"
+      ]
+    },
+    {
+      "mint": "BBKPiLM9KjdJW7oQSKt99RVWcZdhF6sEHRKnwqeBGHST",
+      "symbol": "GHOST",
+      "marketCapUsd": 1649535.066120185,
+      "liquidityUsd": 61208.934471555236,
+      "holders": 15319,
+      "organicScore": 67.25125219521911,
+      "ageDays": 320,
+      "failures": [
+        "market cap $1,649,535 below $50,000,000",
+        "liquidity $61,209 below $1,000,000",
+        "15319 holders below 20000",
+        "organic volume $34,833 below $50,000"
+      ]
+    },
+    {
+      "mint": "DLGRpmkMGr7J4KD1xR5x2XjaGeQH64PLFQkyxNNSpump",
+      "symbol": "TCG",
+      "marketCapUsd": 1521303.448433509,
+      "liquidityUsd": 74626.53426797618,
+      "holders": 1963,
+      "organicScore": 41.061598958606055,
+      "ageDays": 280,
+      "failures": [
+        "excluded tag token-2022",
+        "not the SPL Token program",
+        "market cap $1,521,303 below $50,000,000",
+        "liquidity $74,627 below $1,000,000",
+        "1963 holders below 20000",
+        "organic score 41",
+        "organic volume $5,492 below $50,000"
+      ]
+    },
+    {
+      "mint": "CrAr4RRJMBVwRsZtT62pEhfA9H5utymC2mVx8e7FreP2",
+      "symbol": "MON",
+      "marketCapUsd": 1412127.5601213344,
+      "liquidityUsd": 124535.19077140141,
+      "holders": 7925,
+      "organicScore": 62.568626778854565,
+      "ageDays": 288,
+      "failures": [
+        "mint authority not provably disabled",
+        "market cap $1,412,128 below $50,000,000",
+        "liquidity $124,535 below $1,000,000",
+        "7925 holders below 20000",
+        "organic volume $40,343 below $50,000"
+      ]
+    }
+  ]
+}

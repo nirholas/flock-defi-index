@@ -1,0 +1,84 @@
+{
+  "index": {
+    "name": "Flock DeFi Index",
+    "symbol": "FDI",
+    "navPerTokenUsd": 100
+  },
+  "methodologyVersion": "1.0.0",
+  "generatedAt": "2026-09-07T21:10:12.624Z",
+  "source": "Jupiter tokens/v2 verified set",
+  "universeSize": 3203,
+  "candidateSize": 126,
+  "rules": {
+    "categoryTag": "defi",
+    "excludedTags": [
+      "lst",
+      "original-lst",
+      "stable",
+      "rwa",
+      "stocks",
+      "xstocks",
+      "prestocks",
+      "equities",
+      "token-2022"
+    ],
+    "minMarketCapUsd": 50000000,
+    "minLiquidityUsd": 1000000,
+    "minHolders": 20000,
+    "minAgeDays": 180,
+    "minOrganicScore": 50,
+    "minOrganicVolume24hUsd": 50000,
+    "minOrganicTurnoverBps": 3,
+    "maxFdvToMarketCap": 4,
+    "liquidityCapMultiple": 25,
+    "maxConstituents": 10,
+    "maxWeightBps": 3500,
+    "minWeightBps": 300,
+    "retentionSlack": 0.8
+  },
+  "constituents": [
+    {
+      "mint": "4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R",
+      "symbol": "RAY",
+      "decimals": 6,
+      "score": 312719857.30641466,
+      "weightBps": 3500,
+      "marketCapUsd": 312719857.30641466,
+      "liquidityUsd": 12634245.836149508,
+      "usdPrice": 1.160203580997848
+    },
+    {
+      "mint": "JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN",
+      "symbol": "JUP",
+      "decimals": 6,
+      "score": 106611410.8007982,
+      "weightBps": 3463,
+      "marketCapUsd": 835129336.1839919,
+      "liquidityUsd": 4264456.432031928,
+      "usdPrice": 0.2515212704984593
+    },
+    {
+      "mint": "KMNo3nJsBXfcpJTVhZcXLW7RmTwTt4GVFE7suUBo9sS",
+      "symbol": "KMNO",
+      "decimals": 6,
+      "score": 48565274.86330195,
+      "weightBps": 1577,
+      "marketCapUsd": 136360846.08466524,
+      "liquidityUsd": 1942610.9945320778,
+      "usdPrice": 0.02488585289373644
+    },
+    {
+      "mint": "METvsvVRapdj9cFLzq4Tr43xK4tAjQfwX76z3n6mWQL",
+      "symbol": "MET",
+      "decimals": 6,
+      "score": 44949765.91568528,
+      "weightBps": 1460,
+      "marketCapUsd": 109572165.41521163,
+      "liquidityUsd": 1797990.6366274112,
+      "usdPrice": 0.19901498084909358
+    }
+  ],
+  "totalWeightBps": 10000,
+  "indexMarketCapUsd": 1393782204.9902835,
+  "indexLiquidityUsd": 20639303.899340924
+}

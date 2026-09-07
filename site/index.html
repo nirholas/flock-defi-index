@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Flock DeFi Index</title>
+<meta name="description" content="The DeFi bluechips of Solana in one token. Screened from Jupiter's verified set, weighted by liquidity-adjusted market cap." />
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #fbfbfa;
+    --panel: #ffffff;
+    --ink: #16181d;
+    --muted: #6b7280;
+    --line: #e6e6e3;
+    --accent: #1f6feb;
+    --bar: #1f6feb;
+    --good: #157f3d;
+    --warn: #a15c00;
+    --radius: 10px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d0f12;
+      --panel: #14171c;
+      --ink: #e8eaed;
+      --muted: #9aa3af;
+      --line: #23272e;
+      --accent: #5aa2ff;
+      --bar: #3b82f6;
+      --good: #4ade80;
+      --warn: #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 15px/1.55 ui-sans-serif, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 900px; margin: 0 auto; padding: 48px 20px 80px; }
+  header { border-bottom: 1px solid var(--line); padding-bottom: 24px; margin-bottom: 32px; }
+  h1 { font-size: 30px; letter-spacing: -0.02em; margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0; }
+  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 28px 0; }
+  .stat { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; }
+  .stat .label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .stat .value { font-size: 22px; font-variant-numeric: tabular-nums; margin-top: 4px; }
+  h2 { font-size: 15px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 36px 0 12px; }
+  .rows { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+  .row { display: grid; grid-template-columns: 92px 1fr 120px 120px; gap: 14px; align-items: center; padding: 14px 16px; border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: 0; }
+  .row.head { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.06em; padding: 10px 16px; }
+  .sym { font-weight: 620; }
+  .mint { color: var(--muted); font-size: 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; word-break: break-all; }
+  .weight { font-variant-numeric: tabular-nums; font-size: 17px; }
+  .num { font-variant-numeric: tabular-nums; text-align: right; color: var(--muted); }
+  .track { height: 6px; background: var(--line); border-radius: 999px; overflow: hidden; margin-top: 6px; }
+  .fill { height: 100%; background: var(--bar); border-radius: 999px; transition: width .5s cubic-bezier(.2,.7,.2,1); }
+  .note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+  .miss { padding: 10px 16px; border-bottom: 1px solid var(--line); font-size: 13px; }
+  .miss:last-child { border-bottom: 0; }
+  .miss b { font-weight: 620; }
+  .miss span { color: var(--muted); }
+  a { color: var(--accent); }
+  .pill { display: inline-block; font-size: 12px; border: 1px solid var(--line); border-radius: 999px; padding: 2px 10px; color: var(--muted); }
+  .live { color: var(--good); }
+  .stale { color: var(--warn); }
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+  @media (max-width: 640px) {
+    .row { grid-template-columns: 76px 1fr; }
+    .row .num { display: none; }
+    .row.head { display: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Flock DeFi Index</h1>
+    <p class="sub">The DeFi bluechips of Solana, in one token. <span class="pill" id="version">loading</span></p>
+  </header>
+
+  <section class="stats" id="stats"></section>
+
+  <h2>Composition</h2>
+  <div class="rows" id="rows">
+    <div class="row head"><div>Weight</div><div>Constituent</div><div class="num">Market cap</div><div class="num">Liquidity</div></div>
+  </div>
+  <p class="note" id="pricenote">Prices load from Jupiter when this page is served over http.</p>
+
+  <h2>What did not make it</h2>
+  <div class="rows" id="misses"></div>
+  <p class="note">Every candidate the screen rejected, with every reason. The full record for each run is in <code>data/screen-&lt;date&gt;.json</code>.</p>
+
+  <footer>
+    Screened from Jupiter's verified token set. Weights are liquidity-adjusted market cap, capped at
+    35% and floored at 3%. The rules are in
+    <a href="../METHODOLOGY.md">METHODOLOGY.md</a> and the code that runs them is in
+    <a href="../src/methodology.ts">src/methodology.ts</a>.
+    <br />The index is specified and screened; it is not deployed.
+  </footer>
+</main>
+
+<script type="module">
+const usd = (value) => {
+  if (!Number.isFinite(value)) return "-";
+  if (value >= 1e9) return `$${(value / 1e9).toFixed(2)}B`;
+  if (value >= 1e6) return `$${(value / 1e6).toFixed(1)}M`;
+  if (value >= 1e3) return `$${(value / 1e3).toFixed(0)}k`;
+  return `$${value.toFixed(2)}`;
+};
+
+const stat = (label, value) => {
+  const el = document.createElement("div");
+  el.className = "stat";
+  el.innerHTML = `<div class="label"></div><div class="value"></div>`;
+  el.querySelector(".label").textContent = label;
+  el.querySelector(".value").textContent = value;
+  return el;
+};
+
+async function main() {
+  const data = await (await fetch("./data.json")).json();
+  document.getElementById("version").textContent =
+    `methodology ${data.methodologyVersion} - screened ${data.generatedAt.slice(0, 10)}`;
+
+  const stats = document.getElementById("stats");
+  stats.append(
+    stat("Constituents", String(data.constituents.length)),
+    stat("Universe", `${data.universeSize} verified`),
+    stat("Candidates", `${data.candidateSize} tagged defi`),
+    stat("Index market cap", usd(data.indexMarketCapUsd)),
+    stat("On-chain liquidity", usd(data.indexLiquidityUsd)),
+  );
+
+  const rows = document.getElementById("rows");
+  const max = Math.max(...data.constituents.map((c) => c.weightBps));
+  for (const c of data.constituents) {
+    const row = document.createElement("div");
+    row.className = "row";
+    row.innerHTML = `
+      <div><div class="weight">${(c.weightBps / 100).toFixed(2)}%</div>
+        <div class="track"><div class="fill" style="width:0"></div></div></div>
+      <div><div class="sym">${c.symbol}</div><div class="mint">${c.mint}</div></div>
+      <div class="num">${usd(c.marketCapUsd)}</div>
+      <div class="num">${usd(c.liquidityUsd)}</div>`;
+    rows.append(row);
+    requestAnimationFrame(() => {
+      row.querySelector(".fill").style.width = `${(c.weightBps / max) * 100}%`;
+    });
+  }
+
+  const misses = document.getElementById("misses");
+  for (const miss of (data.nearMisses ?? []).slice(0, 12)) {
+    const el = document.createElement("div");
+    el.className = "miss";
+    el.innerHTML = `<b></b> <span></span>`;
+    el.querySelector("b").textContent = miss.symbol || miss.mint.slice(0, 6);
+    el.querySelector("span").textContent = miss.failures.join(" - ");
+    misses.append(el);
+  }
+  if (!misses.children.length) {
+    misses.innerHTML = `<div class="miss"><span>Nothing was rejected in this run.</span></div>`;
+  }
+
+  // Live prices are a nice-to-have: the composition is the point, and it renders without them.
+  const note = document.getElementById("pricenote");
+  try {
+    const ids = data.constituents.map((c) => c.mint).join(",");
+    const live = await (await fetch(`https://lite-api.jup.ag/price/v3?ids=${ids}`)).json();
+    let moved = 0;
+    for (const c of data.constituents) {
+      const now = Number(live[c.mint]?.usdPrice);
+      if (Number.isFinite(now) && c.usdPrice > 0) {
+        moved += ((now - c.usdPrice) / c.usdPrice) * (c.weightBps / 10000);
+      }
+    }
+    note.innerHTML = `<span class="live">Live.</span> The index is ${(moved * 100).toFixed(2)}% ` +
+      `away from where it was screened, at current Jupiter prices.`;
+  } catch {
+    note.innerHTML = `<span class="stale">Prices unavailable.</span> Figures are as of the screen.`;
+  }
+}
+
+main().catch((error) => {
+  document.getElementById("pricenote").textContent = `Could not load data.json: ${error.message}`;
+});
+</script>
+</body>
+</html>
