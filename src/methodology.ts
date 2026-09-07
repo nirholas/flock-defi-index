@@ -213,8 +213,11 @@ export function weight(scores: number[]): number[] {
   const exact = fixed.map((value) => (value ?? 0) * 10_000);
   const floored = exact.map((value) => Math.floor(value));
   let remainder = 10_000 - floored.reduce((a, b) => a + b, 0);
+  // Ties are broken by score, and "tie" has to tolerate floating point: capping one name and
+  // dividing the rest leaves fractions that differ in the last bits of a double, which would
+  // otherwise hand the spare basis point to an arbitrary name instead of the largest one.
   const order = exact
-    .map((value, i) => ({ i, fraction: value - Math.floor(value) }))
+    .map((value, i) => ({ i, fraction: Math.round((value - Math.floor(value)) * 1e9) }))
     .sort((a, b) => b.fraction - a.fraction || (scores[b.i] ?? 0) - (scores[a.i] ?? 0));
   const result = [...floored];
   for (let k = 0; remainder > 0; k += 1, remainder -= 1) {
