@@ -7,8 +7,9 @@
   "plugins": [
     {
       "name": "flock-defi-index",
-      "source": "./",
+      "source": "./plugins/flock-defi-index",
       "description": "Screen the live Jupiter verified set against the Flock DeFi Index methodology and print the rebalance command.",
+      "category": "development",
       "tags": [
         "solana",
         "defi-index",
