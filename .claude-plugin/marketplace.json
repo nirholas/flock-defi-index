@@ -1,0 +1,22 @@
+{
+  "name": "flock-defi-index",
+  "owner": {
+    "name": "nirholas"
+  },
+  "description": "Screen the live Jupiter verified set against the Flock DeFi Index methodology and print the rebalance command.",
+  "plugins": [
+    {
+      "name": "flock-defi-index",
+      "source": "./",
+      "description": "Screen the live Jupiter verified set against the Flock DeFi Index methodology and print the rebalance command.",
+      "tags": [
+        "solana",
+        "defi-index",
+        "index-fund",
+        "screening",
+        "rebalancing",
+        "jupiter"
+      ]
+    }
+  ]
+}
